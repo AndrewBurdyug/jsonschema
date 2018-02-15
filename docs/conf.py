@@ -29,6 +29,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
+    "sphinxcontrib.spelling",
     "jsonschema_role",
 ]
 
@@ -71,7 +72,7 @@ version = release.partition("-")[0]
 exclude_patterns = ["_build", "_cache", "_static", "_templates"]
 
 # The reST default role (used for this markup: `text`) to use for all documents.
-# default_role = None
+default_role = "any"
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "sphinx"
@@ -84,7 +85,10 @@ doctest_global_setup = dedent("""
     from jsonschema import *
 """)
 
-intersphinx_mapping = {"python": ("http://docs.python.org/2.7", None)}
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/2.7", None),
+    "python3": ("https://docs.python.org/3", None),
+}
 
 
 # -- Options for HTML output ---------------------------------------------------
@@ -246,7 +250,6 @@ texinfo_documents = [
 # How to display URL addresses: "footnote", "no", or "inline".
 # texinfo_show_urls = "footnote"
 
-# -- Read the Docs -------------------------------------------------------------
+# -- Options for sphinxcontrib-spelling -----------------------------------
 
-# Ooo pretty.
-RTD_NEW_THEME = True
+spelling_word_list_filename = "spelling-wordlist.txt"

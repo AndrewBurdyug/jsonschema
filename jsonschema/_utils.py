@@ -63,7 +63,7 @@ def load_schema(name):
 
 def indent(string, times=1):
     """
-    A dumb version of :func:`textwrap.indent` from Python 3.3.
+    A dumb version of `textwrap.indent` from Python 3.3.
 
     """
 
